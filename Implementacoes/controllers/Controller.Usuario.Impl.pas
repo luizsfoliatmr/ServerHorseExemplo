@@ -46,7 +46,7 @@ begin
   inherited;
   pJSON.AddPair('nome', pModelo.Nome);
   pJSON.AddPair('email', pModelo.Email);
-  pJSON.AddPair('ativo', pModelo.Ativo);
+  pJSON.AddPair('ativo', TJSONBool.Create(pModelo.Ativo));
 end;
 
 procedure TControllerUsuario.CarregarModeloComJSON(pModelo: IModeloUsuario; const pJSON: TJSONObject);
