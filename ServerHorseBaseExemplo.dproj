@@ -201,6 +201,13 @@
         <DCCReference Include="interfaces\repositorio\Repositorio.Equipamento.Intf.pas"/>
         <DCCReference Include="interfaces\repositorio\Repositorio.Usuario.Intf.pas"/>
         <DCCReference Include="registros\Registros.ServerBaseExemplo.pas"/>
+        <DCCReference Include="interfaces\modelos\Modelo.NotaFiscal.Intf.pas"/>
+        <DCCReference Include="interfaces\regras\Regra.NotaFiscal.Intf.pas"/>
+        <DCCReference Include="interfaces\repositorio\Repositorio.NotaFiscal.Intf.pas"/>
+        <DCCReference Include="Implementacoes\modelos\Modelo.NotaFiscal.Impl.pas"/>
+        <DCCReference Include="Implementacoes\regras\Regra.NotaFiscal.Impl.pas"/>
+        <DCCReference Include="Implementacoes\bd\BD.Repositorio.NotaFiscal.Impl.pas"/>
+        <DCCReference Include="Implementacoes\controllers\Controller.NotaFiscal.Impl.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

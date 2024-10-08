@@ -1,9 +1,6 @@
 program ServerHorseBaseExemplo;
-
 {$APPTYPE CONSOLE}
-
 {$R *.res}
-
 uses
   System.SysUtils,
   Horse,
@@ -22,26 +19,28 @@ uses
   Regra.Usuario.Intf in 'interfaces\regras\Regra.Usuario.Intf.pas',
   Repositorio.Equipamento.Intf in 'interfaces\repositorio\Repositorio.Equipamento.Intf.pas',
   Repositorio.Usuario.Intf in 'interfaces\repositorio\Repositorio.Usuario.Intf.pas',
-  Registros.ServerBaseExemplo in 'registros\Registros.ServerBaseExemplo.pas';
+  Registros.ServerBaseExemplo in 'registros\Registros.ServerBaseExemplo.pas',
+  Modelo.NotaFiscal.Intf in 'interfaces\modelos\Modelo.NotaFiscal.Intf.pas',
+  Regra.NotaFiscal.Intf in 'interfaces\regras\Regra.NotaFiscal.Intf.pas',
+  Repositorio.NotaFiscal.Intf in 'interfaces\repositorio\Repositorio.NotaFiscal.Intf.pas',
+  Modelo.NotaFiscal.Impl in 'Implementacoes\modelos\Modelo.NotaFiscal.Impl.pas',
+  Regra.NotaFiscal.Impl in 'Implementacoes\regras\Regra.NotaFiscal.Impl.pas',
+  BD.Repositorio.NotaFiscal.Impl in 'Implementacoes\bd\BD.Repositorio.NotaFiscal.Impl.pas',
+  Controller.NotaFiscal.Impl in 'Implementacoes\controllers\Controller.NotaFiscal.Impl.pas';
 
 begin
-
   ReportMemoryLeaksOnShutdown := True;
-
   TRegistradorImplementacoesServerBaseExemplo.Registrar;
-
   THorse.Get('ping',
     procedure(pRequest: THorseRequest; pResponse: THorseResponse)
     begin
       pResponse.Send('pong');
     end);
-
   THorse.Listen(9000,
     procedure
     begin
       Writeln('Server is runing on port ' + THorse.Port.ToString);
       Writeln('Press return to stop...');
-
 {$IFDEF MSWINDOWS}
       Readln;
 {$ELSE}
@@ -50,8 +49,6 @@ begin
         Sleep(100);
       end;
 {$ENDIF}
-
       THorse.StopListen;
     end);
-
 end.

@@ -44,8 +44,8 @@
 		},
 		"https://github.com/luizsfoliatmr/serverhorsebase": {
 			"name": "serverhorsebase",
-			"version": "1.0.6",
-			"hash": "213ab97ca3510c2beeb7d461e4d083fd",
+			"version": "1.0.7",
+			"hash": "a61d7b901e06cb501c532984a12867d3",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
